@@ -24,21 +24,15 @@ def make_bricks(small, big, goal):
 def main():
     print(make_bricks(3, 1, 8))  # Output: True
 
-main()
-
-def make_bricks(small, big, goal):
-    # Use as many big bricks as possible without exceeding goal
-    max_big = min(goal // 5, big)  
-    
-    # Remaining space that needs to be filled with small bricks
-    remaining = goal % 5  # This directly gives the remainder after using big bricks
-    
-    return remaining <= small  # True if we have enough small bricks
-
-def main():
-    print(make_bricks(3, 1, 8))  # Output: True
-    print(make_bricks(3, 1, 9))  # Output: False
-    print(make_bricks(3, 2, 10)) # Output: True
-    print(make_bricks(0, 3, 7))  # Output: False
-
-main()
+//Explanation of Code 
+goal // 5
+// is the integer division operator in Python.
+goal // 5 calculates how many big bricks (each 5 units) we can use to get close to the goal without exceeding it.
+For example, if goal = 8, then 8 // 5 would be 1 (since 5 goes into 8 one time).
+2. min(goal // 5, big)
+The min() function returns the smaller of the two values.
+goal // 5 tells us the maximum number of big bricks that could fit into the goal.
+big is the actual number of big bricks we have available.
+So, min(goal // 5, big) ensures that we use the smaller number between:
+How many big bricks we could use to reach the goal.
+How many big bricks we actually have.
