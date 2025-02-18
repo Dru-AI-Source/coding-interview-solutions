@@ -25,3 +25,20 @@ def main():
     print(make_bricks(3, 1, 8))  # Output: True
 
 main()
+
+def make_bricks(small, big, goal):
+    # Use as many big bricks as possible without exceeding goal
+    max_big = min(goal // 5, big)  
+    
+    # Remaining space that needs to be filled with small bricks
+    remaining = goal % 5  # This directly gives the remainder after using big bricks
+    
+    return remaining <= small  # True if we have enough small bricks
+
+def main():
+    print(make_bricks(3, 1, 8))  # Output: True
+    print(make_bricks(3, 1, 9))  # Output: False
+    print(make_bricks(3, 2, 10)) # Output: True
+    print(make_bricks(0, 3, 7))  # Output: False
+
+main()
